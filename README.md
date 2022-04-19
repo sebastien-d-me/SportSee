@@ -2,7 +2,7 @@
 ## Projet 12 - SportSee
 ------------
 ### Description du projet
-Ce projet est le n°12 du parcours [Développeur d'application - JavaScript React](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react "Développeur d'application - JavaScript React") qui consiste à créer un tableau de bord react avec des données.
+Ce projet est le n°12 du parcours [**Développeur Front-End**](https://openclassrooms.com/fr/paths/314-developpeur-front-end "Développeur Front-End") qui consiste à créer un tableau de bord react avec des données.
 ### Cahiers des charges
 ##### Spécifications fonctionnelles
 1. Intégrer des graphiques
