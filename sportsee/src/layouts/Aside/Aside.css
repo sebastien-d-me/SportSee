@@ -1,0 +1,22 @@
+aside {
+    background-color: #020203;
+    box-shadow: 5px 0 5px #00000040;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 90px);
+    position: relative;
+    width: 115px;
+    z-index: 1;
+}
+
+/* Copyright */ 
+.copyright {
+    bottom: 125px;
+    display: block;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%) rotate(-90deg);
+    width: max-content;
+}
