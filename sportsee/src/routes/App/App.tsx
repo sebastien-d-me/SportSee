@@ -1,6 +1,5 @@
-import React from "react";
 import "./App.css";
-import RoutesPath from "../src/routes/RoutesPath";
+import RoutesPath from "../RoutesPath";
 
 function App() {
   return (

@@ -1,0 +1,56 @@
+.apport {
+    align-items: center;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    display: flex;
+    height: 125px;
+    margin-bottom: 30px;
+    width: 250px;
+}
+
+/* Photo */
+.photo-fond {
+    border-radius: 5px;
+    height: 60px;
+    margin: 0 25px 0 30px;
+    width: 60px;
+}
+
+.photo-type {
+    height: 60px;
+    object-fit: scale-down;
+    width: 60px;
+}
+
+/* Fonds */
+.fond-calories {
+    background-color: #ff00001a;
+}
+.fond-proteines {
+    background-color: #4ab8ff1a;
+}
+.fond-glucides {
+    background-color: #f9ce231a;
+}
+.fond-lipides {
+    background-color: #FD51811a;
+}
+
+/* Informations */
+.apport-infos {
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    line-height: 30px;
+}
+
+.quantite {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.type {
+    color: #74798C;
+    display: block;
+    font-weight: 500;
+}

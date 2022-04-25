@@ -1,12 +1,16 @@
 import "./Layout.css";
+import PropTypes, { InferProps } from "prop-types";
 import Header from "./Header/Header";
 import Aside from "./Aside/Aside";
 
-type LayoutProps = {
-  children: any;
-};
+const LayoutPropTypes = {
+  children: PropTypes.any.isRequired
+}
 
-export function Layout({ children }: LayoutProps) {
+type LayoutPropTypes = InferProps<typeof LayoutPropTypes>;
+Layout.propTypes = LayoutPropTypes;
+
+function Layout({ children }: LayoutPropTypes) {
   return (
     <>
       <Header />
@@ -17,4 +21,5 @@ export function Layout({ children }: LayoutProps) {
     </>
   )
 }
+
 export default Layout;

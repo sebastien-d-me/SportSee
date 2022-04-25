@@ -1,0 +1,18 @@
+.container {
+    left: 115px;
+    margin: 65px 105px;
+    min-height: calc(100vh - 90px - 130px);
+    position: absolute;
+    top: 90px;
+    width: calc(100% - 115px - 210px);
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Apports */ 
+.liste-apports {
+    float: right;
+}
