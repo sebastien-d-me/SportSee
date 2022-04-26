@@ -12,7 +12,24 @@
     font-weight: 400;
 }
 
+/* Liste des stats */
+.liste-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 25px;
+    margin-top: 75px;
+    position: absolute;
+    width: calc(100% - 280px);
+}
+  
+.liste-stats > div {
+    flex-grow: 1;
+    height: 250px;
+    width: 250px;
+}
+
 /* Apports */ 
 .liste-apports {
     float: right;
+    margin-top: 75px;
 }

@@ -1,0 +1,40 @@
+.score {
+    background-color: #fbfbfb;
+}
+
+/* Type */
+.type-stats {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0 0 30px;
+}
+
+/* Graphique */ 
+.score-graphique {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Score */ 
+.pourcentage {
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: #74798C;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    height: 210px;
+    justify-content: center;
+    position: absolute;    
+    text-align: center;
+    width: 210px;    
+}
+
+.nombre-score {
+    color: #000;
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+}
