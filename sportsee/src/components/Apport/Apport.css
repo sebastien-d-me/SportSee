@@ -8,14 +8,6 @@
     width: 250px;
 }
 
-/* Photo */
-.photo-fond {
-    border-radius: 5px;
-    height: 60px;
-    margin: 0 25px 0 30px;
-    width: 60px;
-}
-
 .photo-type {
     height: 60px;
     object-fit: scale-down;
@@ -34,6 +26,14 @@
 }
 .fond-lipides {
     background-color: #FD51811a;
+}
+
+/* Photo */
+.photo-fond {
+    border-radius: 5px;
+    height: 60px;
+    margin: 0 25px 0 30px;
+    width: 60px;
 }
 
 /* Informations */

@@ -1,3 +1,4 @@
+/* Container */
 .container {
     left: 115px;
     margin: 65px 105px;
@@ -7,6 +8,7 @@
     width: calc(100% - 115px - 210px);
 }
 
+/* Description */
 .description {
     font-size: 18px;
     font-weight: 400;
@@ -16,20 +18,85 @@
 .liste-stats {
     display: flex;
     flex-wrap: wrap;
-    gap: 0 25px;
+    gap: 25px 25px;
+    justify-content: space-around;
     margin-top: 75px;
     position: absolute;
     width: calc(100% - 280px);
 }
   
-.liste-stats > div {
-    flex-grow: 1;
-    height: 250px;
-    width: 250px;
+.liste-stats > .col-stats > div {
+    border-radius: 5px;
+    height: 290px;
+    position: relative;
+    width: 290px;
 }
+
+/* Type */
+.type-stats {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    height: 25px;
+    margin: 15px 0 0 30px;
+    position: absolute;
+}
+
 
 /* Apports */ 
 .liste-apports {
     float: right;
     margin-top: 75px;
+}
+
+.col-stats {
+    display: flex;
+    width: 100%;
+    gap: 25px 25px;
+    justify-content: space-between;
+}
+
+/* Tooltip */ 
+.tooltip-stats {
+    background-color: white;
+    min-height: 35px;
+    min-width: 60px;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+}
+
+/* Autre */ 
+tspan {
+    fill: #ffffff;
+}
+
+/** Responsive **/ 
+@media screen and (max-width: 1500px) {
+    .container {
+        left: 115px;
+        margin: 65px 25px;
+        position: absolute;
+        top: 90px;
+        width: calc(100% - 115px - 50px);
+    }
+
+    .liste-stats {
+        justify-content: left;
+        position: unset;
+        width: 100%;
+    }
+
+    .col-stats {
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+
+    .liste-apports {
+        display: flex;
+        flex-wrap: wrap;
+        float: unset;
+        gap: 10px 10px;
+        justify-content: left;
+    }
 }

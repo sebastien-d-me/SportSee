@@ -1,0 +1,19 @@
+.lien-accueil {
+    text-decoration: none;
+}
+
+.btn-accueil {
+    background-color: #ff0000;
+    border-color: transparent;
+    border-radius: 10px;
+    color: white;
+    display: block;
+    min-height: 45px;
+    margin: 10px auto;
+    transition: 0.5s;
+    width: 200px;
+}
+.btn-accueil:hover {
+    background-color: #020203;
+    cursor: pointer;
+}

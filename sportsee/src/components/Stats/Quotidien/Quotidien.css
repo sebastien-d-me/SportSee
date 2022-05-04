@@ -1,0 +1,35 @@
+.tooltip-stats {
+    background-color: #E60000!important;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.Quotidien {
+    background-color: #FBFBFB;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 10px 5px;
+    width: 100%;
+}
+
+.type-stats-quotidien {
+    margin: 15px 0 10px 30px;
+    position: unset;
+}
+
+.recharts-legend-item-text {
+    color: #74798C!important;
+}
+
+text.recharts-text.recharts-cartesian-axis-tick-value > tspan {
+    fill: #9B9EAC;
+    font-weight: bold;
+}
+
+/** Responsive **/ 
+@media screen and (max-width: 1500px) {
+    .Quotidien {
+        width: calc(100% - 90px);
+    }
+}

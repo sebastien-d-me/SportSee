@@ -1,13 +1,5 @@
-.score {
+.Score {
     background-color: #fbfbfb;
-}
-
-/* Type */
-.type-stats {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 15px 0 0 30px;
 }
 
 /* Graphique */ 
@@ -15,6 +7,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 /* Score */ 

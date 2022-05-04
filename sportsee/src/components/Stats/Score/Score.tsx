@@ -3,7 +3,7 @@ import PropTypes, { InferProps } from "prop-types";
 import { RadialBarChart, RadialBar } from "recharts";
 
 const ScorePropTypes = {
-    score: PropTypes.string.isRequired
+  score: PropTypes.number.isRequired
 }
 
 type ScorePropTypes = InferProps<typeof ScorePropTypes>;
@@ -22,7 +22,7 @@ const data = [
 
 function Score({ score }: ScorePropTypes) {
   return (
-    <div className="score">
+    <div className="Score">
       <span className="type-stats">Score</span>
         <div className="score-graphique">
           <RadialBarChart barSize={15} data={data} height={250} innerRadius="100%" startAngle={90} endAngle={450} width={250}>
