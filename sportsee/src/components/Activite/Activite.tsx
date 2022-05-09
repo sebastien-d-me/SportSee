@@ -11,7 +11,7 @@ Activite.propTypes = ActivitePropTypes;
 function Activite({ image }: ActivitePropTypes) {
   return (
     <div className="activite">
-      <img src={image} />
+      <img src={image} alt="activite" />
     </div>
   )
 }

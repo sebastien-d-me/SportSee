@@ -36,7 +36,7 @@ function Apport({ photo, quantite, type }: ApportPropTypes) {
   return (
     <div className="apport">
       <div className={`photo-fond fond-${photo}`}>
-        <img className="photo-type" src={srcImg} />
+        <img className="photo-type" src={srcImg} alt="apport" />
       </div>
       <div className="apport-infos">
         <span className="quantite">{quantite}</span>
