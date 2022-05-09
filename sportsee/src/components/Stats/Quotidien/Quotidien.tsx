@@ -68,15 +68,17 @@ function Quotidien({ datas }: QuotidienPropTypes) {
   return (
     <div className="Quotidien">
       <span className="type-stats type-stats-quotidien">Activité quotidienne</span>
-          <BarChart data={data} height={300} width={600}>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis dataKey="name" tickLine={false} />
-            <YAxis dataKey="calories" orientation="right" />
-            <Tooltip content={<CustomTooltip/>} />
-            <Legend align="right" height={35} iconType="circle" verticalAlign="top"/>
-            <Bar barSize={15} dataKey="poids" fill="#282D30" name="Poids (kg)" radius={[50, 50, 0, 0]} />
-            <Bar barSize={15} dataKey="calories" fill="#E60000" name="Calories brûlées (kCal)" radius={[50, 50, 0, 0]} />
-          </BarChart>
+      <ResponsiveContainer aspect={5}>
+        <BarChart data={data} height={300}>
+          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <XAxis dataKey="name" tickLine={false} />
+          <YAxis dataKey="calories" orientation="right" />
+          <Tooltip content={<CustomTooltip/>} />
+          <Legend align="right" height={35} iconType="circle" verticalAlign="top"/>
+          <Bar barSize={15} dataKey="poids" fill="#282D30" name="Poids (kg)" radius={[50, 50, 0, 0]} />
+          <Bar barSize={15} dataKey="calories" fill="#E60000" name="Calories brûlées (kCal)" radius={[50, 50, 0, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   )
 }

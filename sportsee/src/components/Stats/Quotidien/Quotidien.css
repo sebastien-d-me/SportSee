@@ -18,6 +18,14 @@
     position: unset;
 }
 
+.Quotidien > div > .recharts-wrapper {
+    width: 100%!important;
+}
+
+.Quotidien > div > .recharts-wrapper > .recharts-surface {
+    max-width: 100%;
+}
+
 .recharts-legend-item-text {
     color: #74798C!important;
 }
@@ -25,11 +33,4 @@
 text.recharts-text.recharts-cartesian-axis-tick-value > tspan {
     fill: #9B9EAC;
     font-weight: bold;
-}
-
-/** Responsive **/ 
-@media screen and (max-width: 1500px) {
-    .Quotidien {
-        width: calc(100% - 90px);
-    }
 }

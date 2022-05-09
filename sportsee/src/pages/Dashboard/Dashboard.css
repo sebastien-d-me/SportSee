@@ -25,13 +25,6 @@
     width: calc(100% - 280px);
 }
   
-.liste-stats > .col-stats > div {
-    border-radius: 5px;
-    height: 290px;
-    position: relative;
-    width: 290px;
-}
-
 /* Type */
 .type-stats {
     display: block;
@@ -54,6 +47,13 @@
     width: 100%;
     gap: 25px 25px;
     justify-content: space-between;
+}
+
+.col-stats > div {
+    border-radius: 5px;
+    height: 290px;
+    position: relative;
+    width: 290px;
 }
 
 /* Tooltip */ 
@@ -87,9 +87,19 @@ tspan {
         width: 100%;
     }
 
+    .type-stats {
+        margin: 5px 0 0 0;
+    }
+    
     .col-stats {
         flex-wrap: wrap;
         justify-content: left;
+    }
+
+    .col-stats > div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .liste-apports {
