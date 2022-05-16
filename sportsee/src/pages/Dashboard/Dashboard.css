@@ -3,6 +3,7 @@
     left: 115px;
     margin: 65px 105px;
     min-height: calc(100vh - 90px - 130px);
+    padding-bottom: 50px;
     position: absolute;
     top: 90px;
     width: calc(100% - 115px - 210px);
@@ -38,8 +39,11 @@
 
 /* Apports */ 
 .liste-apports {
+    display: flex;
+    flex-direction: column;
     float: right;
     margin-top: 75px;
+    min-height: calc(100vh - 90px - 65px - 90px);
 }
 
 .col-stats {

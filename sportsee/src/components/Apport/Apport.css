@@ -3,9 +3,13 @@
     background-color: #FBFBFB;
     border-radius: 5px;
     display: flex;
+    flex-grow: 1;
     height: 125px;
     margin-bottom: 30px;
     width: 250px;
+}
+.apport:last-child {
+    margin-bottom: 0;
 }
 
 .photo-type {

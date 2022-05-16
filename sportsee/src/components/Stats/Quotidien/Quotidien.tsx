@@ -46,7 +46,6 @@ const data = [
     "calories": 390
   }
 ]
-  
 
 const CustomTooltip = ({
   active,
@@ -68,7 +67,7 @@ function Quotidien({ datas }: QuotidienPropTypes) {
   return (
     <div className="Quotidien">
       <span className="type-stats type-stats-quotidien">Activité quotidienne</span>
-      <ResponsiveContainer aspect={5}>
+      <ResponsiveContainer aspect={4}>
         <BarChart data={data} height={300}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="name" tickLine={false} />

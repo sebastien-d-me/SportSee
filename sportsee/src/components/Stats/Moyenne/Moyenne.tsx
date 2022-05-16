@@ -71,7 +71,7 @@ function Moyenne({ lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche }: 
           <YAxis hide={true} />
           <Tooltip content={<CustomTooltip />} cursor={{
 						stroke: 'rgba(0, 0, 0, 0.25)',
-						strokeWidth: 25,
+						strokeWidth: 50,
 					}} />
           <Line dataKey="value" dot={false} stroke="#ffffff" type="monotone" />
         </LineChart>
