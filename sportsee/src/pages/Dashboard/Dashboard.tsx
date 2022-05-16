@@ -11,17 +11,18 @@ import Apport from "../../components/Apport/Apport";
 
 function Dashboard() {
   const {id} = useParams();
-  const [userInfos, setUserInfos] = useState<string>("")
+  const [userInfos, setUserInfos] = useState([]);
 
   useEffect(() => {
     Utils.utilsUserInfos(id).then((response) => {
         setUserInfos(response);      
     });
   }, []);
+  console.log(userInfos)
 
   return (
     <div className="container">
-      <Prenom prenom={userInfos} />
+      <Prenom prenom={userInfos.firstName} />
       <span className="description">Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
       <div>
         <div className="liste-stats">
