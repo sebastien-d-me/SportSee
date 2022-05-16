@@ -10,19 +10,31 @@ import Score from "../../components/Stats/Score/Score";
 import Apport from "../../components/Apport/Apport";
 
 function Dashboard() {
-  const {id} = useParams();
-  const [userInfos, setUserInfos] = useState([]);
+  /* Get ID */
+  const { id } = useParams();
 
+  /* User Infos : Interfaces - State */
+  interface interfaceUserInfos {
+    firstName: string,
+    calorieCount: number,
+    proteinCount: number,
+    carbohydrateCount: number,
+    lipidCount: number
+  }
+
+  const [userInfos, setUserInfos] = useState<interfaceUserInfos>();
+
+  /* Use effect */
   useEffect(() => {
+    /* User Infos */
     Utils.utilsUserInfos(id).then((response) => {
-        setUserInfos(response);      
+      setUserInfos(response);   
     });
-  }, []);
-  console.log(userInfos)
+  }, [id]);
 
   return (
     <div className="container">
-      <Prenom prenom={userInfos.firstName} />
+      <Prenom prenom={userInfos?.firstName} />
       <span className="description">Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
       <div>
         <div className="liste-stats">
@@ -34,10 +46,10 @@ function Dashboard() {
           </div>
         </div>
         <div className="liste-apports">
-          <Apport photo="calories" quantite="1,930kCal" type="Calories" />
-          <Apport photo="proteines" quantite="155g" type="Protéines" />
-          <Apport photo="glucides" quantite="290g" type="Glucides" />
-          <Apport photo="lipides" quantite="50g" type="Lipides" />
+          <Apport photo="calories" quantite={userInfos?.calorieCount} type="Calories" />
+          <Apport photo="proteines" quantite={userInfos?.proteinCount} type="Protéines" />
+          <Apport photo="glucides" quantite={userInfos?.carbohydrateCount} type="Glucides" />
+          <Apport photo="lipides" quantite={userInfos?.lipidCount} type="Lipides" />
         </div>
       </div>
     </div>

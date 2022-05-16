@@ -7,7 +7,7 @@ import PropTypes, { InferProps } from "prop-types";
 
 const ApportPropTypes = {
   photo: PropTypes.string.isRequired,
-  quantite: PropTypes.string.isRequired,
+  quantite: PropTypes.number,
   type: PropTypes.string.isRequired
 }
 

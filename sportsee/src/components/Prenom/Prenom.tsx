@@ -2,7 +2,7 @@ import "./Prenom.css";
 import PropTypes, { InferProps } from "prop-types";
 
 const PrenomPropTypes = {
-  prenom: PropTypes.string.isRequired
+  prenom: PropTypes.string
 }
 
 type PrenomPropTypes = InferProps<typeof PrenomPropTypes>;
