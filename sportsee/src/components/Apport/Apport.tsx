@@ -5,29 +5,35 @@ import Glucides from "../../assets/img/Components/Apport/Glucides.png";
 import Lipides from "../../assets/img/Components/Apport/Lipides.png";
 import PropTypes, { InferProps } from "prop-types";
 
-const ApportPropTypes = {
+const ApportProp = {
   photo: PropTypes.string.isRequired,
+  quantiteStr: PropTypes.string,
   quantite: PropTypes.number,
   type: PropTypes.string.isRequired
 }
 
-type ApportPropTypes = InferProps<typeof ApportPropTypes>;
-Apport.propTypes = ApportPropTypes;
+type ApportPropTypes = InferProps<typeof ApportProp>;
+Apport.propTypes = ApportProp;
 
-function Apport({ photo, quantite, type }: ApportPropTypes) {
+function Apport({ photo, quantiteStr, quantite, type }: ApportPropTypes) {
   let srcImg = "";
+  let unite = "";
   switch(photo) {
     case "calories":
       srcImg = Calories;
+      unite = "kCal";
       break;
     case "proteines":
       srcImg = Proteines;
+      unite = "g";
       break;
     case "glucides":
       srcImg = Glucides;
+      unite = "g";
       break;
     case "lipides":
       srcImg = Lipides;
+      unite = "g";
       break;
     default:
       break;
@@ -39,7 +45,7 @@ function Apport({ photo, quantite, type }: ApportPropTypes) {
         <img className="photo-type" src={srcImg} alt="apport" />
       </div>
       <div className="apport-infos">
-        <span className="quantite">{quantite}</span>
+        <span className="quantite">{quantite || quantiteStr }{unite}</span>
         <span className="type">{type}</span>
       </div>
     </div>

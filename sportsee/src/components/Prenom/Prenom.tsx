@@ -1,12 +1,12 @@
 import "./Prenom.css";
 import PropTypes, { InferProps } from "prop-types";
 
-const PrenomPropTypes = {
+const PrenomProp = {
   prenom: PropTypes.string
 }
 
-type PrenomPropTypes = InferProps<typeof PrenomPropTypes>;
-Prenom.propTypes = PrenomPropTypes;
+type PrenomPropTypes = InferProps<typeof PrenomProp>;
+Prenom.propTypes = PrenomProp;
 
 function Prenom({ prenom }: PrenomPropTypes) {
   return (

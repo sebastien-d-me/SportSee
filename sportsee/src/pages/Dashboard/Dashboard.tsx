@@ -16,19 +16,69 @@ function Dashboard() {
   /* User Infos : Interfaces - State */
   interface interfaceUserInfos {
     firstName: string,
-    calorieCount: number,
+    score: number,
+    calorieCount: string,
     proteinCount: number,
     carbohydrateCount: number,
     lipidCount: number
   }
-
   const [userInfos, setUserInfos] = useState<interfaceUserInfos>();
+
+  /* Activity : Interfaces - State */
+  interface interfaceActivitySessions {
+    jour1: object,
+    jour2: object,
+    jour3: object,
+    jour4: object,
+    jour5: object,
+    jour6: object,
+    jour7: object
+  }
+  const [activity, setActivity] = useState<interfaceActivitySessions>();
+
+  /* Average Sessions : Interfaces - State */
+  interface interfaceAverageSessions {
+    lundi: number,
+    mardi: number,
+    mercredi: number,
+    jeudi: number,
+    vendredi: number,
+    samedi: number,
+    dimanche: number,
+  }
+  const [averageSessions, setAverageSessions] = useState<interfaceAverageSessions>();
+
+  /* User Performance : Interfaces - State */
+  interface interfaceUserPerformance {
+    cardio: number,
+    energy: number,
+    endurance: number,
+    strength: number,
+    speed: number,
+    intensity: number
+  }
+  const [userPerformance, setUserPerformance] = useState<interfaceUserPerformance>();
 
   /* Use effect */
   useEffect(() => {
     /* User Infos */
     Utils.utilsUserInfos(id).then((response) => {
       setUserInfos(response);   
+    });
+
+    /* Activity */
+    Utils.utilsActivity(id).then((response) => {
+      setActivity(response);   
+    });
+
+    /* Average Sessions */
+    Utils.utilsAverageSessions(id).then((response) => {
+      setAverageSessions(response);   
+    });
+
+    /* User Performance */
+    Utils.utilsUserPerformance(id).then((response) => {
+      setUserPerformance(response);   
     });
   }, [id]);
 
@@ -38,15 +88,15 @@ function Dashboard() {
       <span className="description">Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
       <div>
         <div className="liste-stats">
-          <Quotidien datas={[]}/>
+          <Quotidien jour1={activity?.jour1} jour2={activity?.jour2} jour3={activity?.jour3} jour4={activity?.jour4} jour5={activity?.jour5} jour6={activity?.jour6} jour7={activity?.jour7} />
           <div className="col-stats">
-            <Moyenne lundi={30} mardi={40} mercredi={50} jeudi={30} vendredi={30} samedi={50} dimanche={50} />
-            <Toile cardio={200} energy={240} endurance={80} strength={80} speed={220} intensity={110} />
-            <Score score={0.12} />
+            <Moyenne lundi={averageSessions?.lundi} mardi={averageSessions?.mardi} mercredi={averageSessions?.mercredi} jeudi={averageSessions?.jeudi} vendredi={averageSessions?.vendredi} samedi={averageSessions?.samedi} dimanche={averageSessions?.dimanche} />
+            <Toile cardio={userPerformance?.cardio} energy={userPerformance?.energy} endurance={userPerformance?.endurance} strength={userPerformance?.strength} speed={userPerformance?.speed} intensity={userPerformance?.intensity} />
+            <Score score={userInfos?.score} />
           </div>
         </div>
         <div className="liste-apports">
-          <Apport photo="calories" quantite={userInfos?.calorieCount} type="Calories" />
+          <Apport photo="calories" quantiteStr={userInfos?.calorieCount} type="Calories" />
           <Apport photo="proteines" quantite={userInfos?.proteinCount} type="Protéines" />
           <Apport photo="glucides" quantite={userInfos?.carbohydrateCount} type="Glucides" />
           <Apport photo="lipides" quantite={userInfos?.lipidCount} type="Lipides" />

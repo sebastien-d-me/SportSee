@@ -2,49 +2,18 @@ import "./Moyenne.css";
 import PropTypes, { InferProps } from "prop-types";
 import { LineChart, XAxis, YAxis, Tooltip, Line, TooltipProps  } from "recharts";
 
-const MoyennePropTypes = {
-  lundi: PropTypes.number.isRequired,
-  mardi: PropTypes.number.isRequired,
-  mercredi: PropTypes.number.isRequired,
-  jeudi: PropTypes.number.isRequired,
-  vendredi: PropTypes.number.isRequired,
-  samedi: PropTypes.number.isRequired,
-  dimanche: PropTypes.number.isRequired,
+const MoyenneProp = {
+  lundi: PropTypes.number,
+  mardi: PropTypes.number,
+  mercredi: PropTypes.number,
+  jeudi: PropTypes.number,
+  vendredi: PropTypes.number,
+  samedi: PropTypes.number,
+  dimanche: PropTypes.number,
 }
 
-type MoyennePropTypes = InferProps<typeof MoyennePropTypes>;
-Moyenne.propTypes = MoyennePropTypes;
-
-const data = [
-  {
-    "name": "L",
-    "value": 30
-  },
-  {
-    "name": "M",
-    "value": 40
-  },
-  {
-    "name": "M",
-    "value": 50
-  },
-  {
-    "name": "J",
-    "value": 30
-  },
-  {
-    "name": "V",
-    "value": 30
-  },
-  {
-    "name": "S",
-    "value": 50
-  },
-  {
-    "name": "D",
-    "value": 50
-  }
-]
+type MoyennePropTypes = InferProps<typeof MoyenneProp>;
+Moyenne.propTypes = MoyenneProp;
 
 const CustomTooltip = ({
   active,
@@ -62,6 +31,37 @@ const CustomTooltip = ({
 };
 
 function Moyenne({ lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche }: MoyennePropTypes) {
+  const data = [
+    {
+      "name": "L",
+      "value": Object.values({lundi})[0]
+    },
+    {
+      "name": "M",
+      "value": Object.values({mardi})[0]
+    },
+    {
+      "name": "M",
+      "value": Object.values({mercredi})[0]
+    },
+    {
+      "name": "J",
+      "value": Object.values({jeudi})[0]
+    },
+    {
+      "name": "V",
+      "value": Object.values({vendredi})[0]
+    },
+    {
+      "name": "S",
+      "value": Object.values({samedi})[0]
+    },
+    {
+      "name": "D",
+      "value": Object.values({dimanche})[0]
+    }
+  ];
+  
   return (
     <div className="Moyenne">
       <span className="type-stats type-stats-moyenne">Durée moyenne des sessions</span>

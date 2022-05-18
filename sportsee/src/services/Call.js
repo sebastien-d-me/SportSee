@@ -7,9 +7,40 @@ const instance = axios.create({
   timeout: 1000
 });
 
-export const getUserInformations = async(id) => {
+/* User Infos */
+export const getUserInfos = async(id) => {
   try {
     const response = await instance.get(`/${id}`);
+    return response.data.data;
+  } catch (error) {
+    <Navigate replace to="/404" />
+  }
+}
+
+/* Activity */
+export const getActivity = async(id) => {
+  try {
+    const response = await instance.get(`/${id}/activity`);
+    return response.data.data;
+  } catch (error) {
+    <Navigate replace to="/404" />
+  }
+}
+
+/* Average Sessions */
+export const getAverageSessions = async(id) => {
+  try {
+    const response = await instance.get(`/${id}/average-sessions`);
+    return response.data.data;
+  } catch (error) {
+    <Navigate replace to="/404" />
+  }
+}
+
+/* User Performance */
+export const getUserPerformance = async(id) => {
+  try {
+    const response = await instance.get(`/${id}/performance`);
     return response.data.data;
   } catch (error) {
     <Navigate replace to="/404" />
