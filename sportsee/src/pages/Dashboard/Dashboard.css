@@ -113,4 +113,8 @@ tspan {
         gap: 10px 10px;
         justify-content: left;
     }
+
+    .apport {
+        justify-content: center;
+    }
 }
