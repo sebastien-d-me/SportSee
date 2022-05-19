@@ -50,6 +50,7 @@ export async function utilsAverageSessions(id) {
 /* User Performance */
 export async function utilsUserPerformance(id) {
   return Call.getUserPerformance(id).then((response) => {
+    /** Essayer [] pour array */
     return {
       cardio: response.data[0].value,
       energy: response.data[1].value,

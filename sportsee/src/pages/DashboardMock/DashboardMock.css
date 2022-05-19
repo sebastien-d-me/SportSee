@@ -1,0 +1,120 @@
+/* Container */
+.container {
+    left: 115px;
+    margin: 65px 105px;
+    min-height: calc(100vh - 90px - 130px);
+    padding-bottom: 50px;
+    position: absolute;
+    top: 90px;
+    width: calc(100% - 115px - 210px);
+}
+
+/* Description */
+.description {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Liste des stats */
+.liste-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 25px;
+    justify-content: space-around;
+    margin-top: 75px;
+    position: absolute;
+    width: calc(100% - 280px);
+}
+  
+/* Type */
+.type-stats {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    height: 25px;
+    margin: 15px 0 0 30px;
+    position: absolute;
+}
+
+
+/* Apports */ 
+.liste-apports {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-top: 75px;
+    min-height: calc(100vh - 90px - 65px - 90px);
+}
+
+.col-stats {
+    display: flex;
+    width: 100%;
+    gap: 25px 25px;
+    justify-content: space-between;
+}
+
+.col-stats > div {
+    border-radius: 5px;
+    height: 290px;
+    position: relative;
+    width: 290px;
+}
+
+/* Tooltip */ 
+.tooltip-stats {
+    background-color: white;
+    min-height: 35px;
+    min-width: 60px;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+}
+
+/* Autre */ 
+tspan {
+    fill: #ffffff;
+}
+
+/** Responsive **/ 
+@media screen and (max-width: 1500px) {
+    .container {
+        left: 115px;
+        margin: 65px 25px;
+        position: absolute;
+        top: 90px;
+        width: calc(100% - 115px - 50px);
+    }
+
+    .liste-stats {
+        justify-content: left;
+        position: unset;
+        width: 100%;
+    }
+
+    .type-stats {
+        margin: 5px 0 0 0;
+    }
+    
+    .col-stats {
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+
+    .col-stats > div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .liste-apports {
+        display: flex;
+        flex-wrap: wrap;
+        float: unset;
+        gap: 10px 10px;
+        justify-content: left;
+    }
+
+    .apport {
+        justify-content: center;
+    }
+}
