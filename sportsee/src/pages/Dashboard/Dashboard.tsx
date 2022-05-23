@@ -9,11 +9,19 @@ import Toile from "../../components/Stats/Toile/Toile";
 import Score from "../../components/Stats/Score/Score";
 import Apport from "../../components/Apport/Apport";
 
+/**
+ * Display the dashboard
+ * @returns {*}
+ */
 function Dashboard() {
   /* Get ID */
   const { id } = useParams();
 
-  /* User Infos : Interfaces - State */
+  /**
+   * User Infos : Interfaces - State
+   * @interface interfaceUserInfos
+   * @typedef {interfaceUserInfos}
+   */
   interface interfaceUserInfos {
     firstName: string,
     score: number,
@@ -24,7 +32,11 @@ function Dashboard() {
   }
   const [userInfos, setUserInfos] = useState<interfaceUserInfos>();
 
-  /* Activity : Interfaces - State */
+  /**
+   * Activity : Interfaces - State
+   * @interface interfaceActivitySessions
+   * @typedef {interfaceActivitySessions}
+   */
   interface interfaceActivitySessions {
     jour1: object,
     jour2: object,
@@ -36,7 +48,11 @@ function Dashboard() {
   }
   const [activity, setActivity] = useState<interfaceActivitySessions>();
 
-  /* Average Sessions : Interfaces - State */
+  /**
+   * Average Sessions : Interfaces - State
+   * @interface interfaceAverageSessions
+   * @typedef {interfaceAverageSessions}
+   */
   interface interfaceAverageSessions {
     lundi: number,
     mardi: number,
@@ -48,7 +64,11 @@ function Dashboard() {
   }
   const [averageSessions, setAverageSessions] = useState<interfaceAverageSessions>();
 
-  /* User Performance : Interfaces - State */
+  /**
+   * User Performance : Interfaces - State
+   * @interface interfaceUserPerformance
+   * @typedef {interfaceUserPerformance}
+   */
   interface interfaceUserPerformance {
     cardio: number,
     energy: number,

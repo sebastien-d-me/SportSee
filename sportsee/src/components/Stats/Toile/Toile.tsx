@@ -3,6 +3,11 @@ import PropTypes, { InferProps } from "prop-types";
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from "recharts";
 import { useState, useEffect } from "react";
 
+
+/**
+ * Defines the types accepted in this component
+ * @type {{ cardio: any; energy: any; endurance: any; strength: any; speed: any; intensity: any; }}
+ */
 const ToileProp = {
   cardio: PropTypes.number,
   energy: PropTypes.number,
@@ -12,15 +17,29 @@ const ToileProp = {
   intensity: PropTypes.number,
 }
 
+/**
+ * @typedef {ToilePropTypes}
+ */
+type ToilePropTypes = InferProps<typeof ToileProp>;
+Toile.propTypes = ToileProp;
+
+/**
+ * Create a interface for the data
+ * @interface dataProps
+ * @typedef {dataProps}
+ */
 interface dataProps {
   type: string,
   value: number | undefined | null,
   fullMark: number
 }
 
-type ToilePropTypes = InferProps<typeof ToileProp>;
-Toile.propTypes = ToileProp;
 
+/**
+ * Displays the graph with the performance
+ * @param {ToilePropTypes} { cardio, energy, endurance, strength, speed, intensity }
+ * @returns
+ */
 function Toile({ cardio, energy, endurance, strength, speed, intensity }: ToilePropTypes) {
   const [data, setData] = useState<dataProps[]>([]);
   

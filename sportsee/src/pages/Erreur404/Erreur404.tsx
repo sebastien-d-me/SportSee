@@ -1,6 +1,10 @@
 import "./Erreur404.css";
 import { NavLink } from "react-router-dom";
 
+/**
+ * Display the 404 error page
+ * @returns {*}
+ */
 function Erreur404() {
   return (
     <div className="container">

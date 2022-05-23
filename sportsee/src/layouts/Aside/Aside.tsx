@@ -5,6 +5,10 @@ import Natation from "../../assets/img/Components/Activite/Natation.png";
 import Cyclisme from "../../assets/img/Components/Activite/Cyclisme.png";
 import Halterophilie from "../../assets/img/Components/Activite/Halterophilie.png";
 
+/**
+ * Display the aside menu
+ * @returns {*}
+ */
 function Aside() {
   return (
     <aside>

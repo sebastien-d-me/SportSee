@@ -9,6 +9,7 @@
     opacity: 0.65;
 }
 
+/* Graphique */
 .moyenne-courbe > .recharts-wrapper > .recharts-surface {
     height: 250px;
     margin-top: 40px;

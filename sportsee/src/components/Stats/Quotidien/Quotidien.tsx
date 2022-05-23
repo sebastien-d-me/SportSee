@@ -2,6 +2,11 @@ import "./Quotidien.css";
 import PropTypes from "prop-types";
 import { BarChart, CartesianGrid, Legend, Bar, XAxis, YAxis, Tooltip, TooltipProps, ResponsiveContainer } from "recharts";
 
+
+/**
+ * Defines the types accepted in this component
+ * @type {{ jour1: any; jour2: any; jour3: any; jour4: any; jour5: any; jour6: any; jour7: any; }}
+ */
 const QuotidienProp = {
   jour1: PropTypes.object,
   jour2: PropTypes.object,
@@ -14,10 +19,12 @@ const QuotidienProp = {
 
 Quotidien.propTypes = QuotidienProp;
 
-const CustomTooltip = ({
-  active,
-  payload,
-}: TooltipProps<number, string>) => {
+/**
+ * Create a custom tooltip on hover
+ * @param {TooltipProps<number, string>} {active,payload}
+ * @returns {*}
+ */
+const CustomTooltip = ({active,payload}: TooltipProps<number, string>) => {
   if (active) {
     return (
       <div className="tooltip-stats tooltip-stats-quotidien">
@@ -29,6 +36,11 @@ const CustomTooltip = ({
   return null;
 };
 
+/**
+ * Displays the daily activity graph
+ * @param {*} { jour1, jour2, jour3, jour4, jour5, jour6, jour7 }
+ * @returns
+ */
 function Quotidien({ jour1, jour2, jour3, jour4, jour5, jour6, jour7 }: any) {
   const data = [
     {

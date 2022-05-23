@@ -10,11 +10,19 @@ import Score from "../../components/Stats/Score/Score";
 import Apport from "../../components/Apport/Apport";
 import * as Call from "../../services/Call";
 
+/**
+ * Display the dashboard
+ * @returns {*}
+ */
 function DashboardMock() {
   /* Get ID */
   const { id } = useParams();
 
-  /* User Infos : Interfaces - State */
+  /**
+   * User Infos : Interfaces - State
+   * @interface interfaceUserInfos
+   * @typedef {interfaceUserInfos}
+   */
   interface interfaceUserInfos {
     firstName: string,
     score: number,
@@ -25,7 +33,11 @@ function DashboardMock() {
   }
   const [userInfos, setUserInfos] = useState<interfaceUserInfos | any>();
 
-  /* Activity : Interfaces - State */
+  /**
+   * Activity : Interfaces - State
+   * @interface interfaceActivitySessions
+   * @typedef {interfaceActivitySessions}
+   */
   interface interfaceActivitySessions {
     jour1: object,
     jour2: object,
@@ -37,7 +49,11 @@ function DashboardMock() {
   }
   const [activity, setActivity] = useState<interfaceActivitySessions | any>();
 
-  /* Average Sessions : Interfaces - State */
+  /**
+   * Average Sessions : Interfaces - State
+   * @interface interfaceAverageSessions
+   * @typedef {interfaceAverageSessions}
+   */
   interface interfaceAverageSessions {
     lundi: number,
     mardi: number,
@@ -49,7 +65,11 @@ function DashboardMock() {
   }
   const [averageSessions, setAverageSessions] = useState<interfaceAverageSessions | any>();
 
-  /* User Performance : Interfaces - State */
+  /**
+   * User Performance : Interfaces - State
+   * @interface interfaceUserPerformance
+   * @typedef {interfaceUserPerformance}
+   */
   interface interfaceUserPerformance {
     value: number,
     kind: number

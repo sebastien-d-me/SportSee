@@ -2,6 +2,11 @@ import "./Moyenne.css";
 import PropTypes, { InferProps } from "prop-types";
 import { LineChart, XAxis, YAxis, Tooltip, Line, TooltipProps  } from "recharts";
 
+
+/**
+ * Defines the types accepted in this component
+ * @type {{ lundi: any; mardi: any; mercredi: any; jeudi: any; vendredi: any; samedi: any; dimanche: any; }}
+ */
 const MoyenneProp = {
   lundi: PropTypes.number,
   mardi: PropTypes.number,
@@ -12,13 +17,18 @@ const MoyenneProp = {
   dimanche: PropTypes.number,
 }
 
+/**
+ * @typedef {MoyennePropTypes}
+ */
 type MoyennePropTypes = InferProps<typeof MoyenneProp>;
 Moyenne.propTypes = MoyenneProp;
 
-const CustomTooltip = ({
-  active,
-  payload,
-}: TooltipProps<number, string>) => {
+/**
+ * Create a custom tooltip on hover
+ * @param {TooltipProps<number, string>} {active, payload}
+ * @returns {*}
+ */
+const CustomTooltip = ({active, payload}: TooltipProps<number, string>) => {
   if (active) {
     return (
       <div className="tooltip-stats">
@@ -26,10 +36,14 @@ const CustomTooltip = ({
       </div>
     );
   }
-
   return null;
 };
 
+/**
+ * Displays the average session duration graph
+ * @param {MoyennePropTypes} { lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche }
+ * @returns
+ */
 function Moyenne({ lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche }: MoyennePropTypes) {
   const data = [
     {
@@ -69,10 +83,7 @@ function Moyenne({ lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche }: 
         <LineChart data={data} height={290} width={290}>
           <XAxis axisLine={false} dataKey="name" tickLine={false} />
           <YAxis hide={true} />
-          <Tooltip content={<CustomTooltip />} cursor={{
-						stroke: 'rgba(0, 0, 0, 0.25)',
-						strokeWidth: 50,
-					}} />
+          <Tooltip content={<CustomTooltip />} cursor={{stroke: 'rgba(0, 0, 0, 0.25)', strokeWidth: 50}} />
           <Line dataKey="value" dot={false} stroke="#ffffff" type="monotone" />
         </LineChart>
       </div>

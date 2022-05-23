@@ -1,6 +1,10 @@
 import "./Accueil.css";
 import { NavLink } from "react-router-dom";
 
+/**
+ * Display the home page
+ * @returns {*}
+ */
 function Accueil() {
   return (
     <div className="container">

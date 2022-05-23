@@ -1,10 +1,15 @@
 import "./Apport.css";
+import PropTypes, { InferProps } from "prop-types";
 import Calories from "../../assets/img/Components/Apport/Calories.png";
 import Proteines from "../../assets/img/Components/Apport/Proteines.png";
 import Glucides from "../../assets/img/Components/Apport/Glucides.png";
 import Lipides from "../../assets/img/Components/Apport/Lipides.png";
-import PropTypes, { InferProps } from "prop-types";
 
+
+/**
+ * Defines the types accepted in this component
+ * @type {{ photo: any; quantiteStr: any; quantite: any; type: any; }}
+ */
 const ApportProp = {
   photo: PropTypes.string.isRequired,
   quantiteStr: PropTypes.string,
@@ -12,10 +17,21 @@ const ApportProp = {
   type: PropTypes.string.isRequired
 }
 
+/**
+ * @typedef {ApportPropTypes}
+ */
 type ApportPropTypes = InferProps<typeof ApportProp>;
 Apport.propTypes = ApportProp;
 
+/**
+ * Displays the different inputs with their image and value
+ * @param {ApportPropTypes} { photo, quantiteStr, quantite, type }
+ * @returns
+ */
 function Apport({ photo, quantiteStr, quantite, type }: ApportPropTypes) {
+  /**
+   * Adds according to the type the corresponding photo and its unit
+   */
   let srcImg = "";
   let unite = "";
   switch(photo) {

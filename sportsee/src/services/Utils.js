@@ -1,6 +1,8 @@
 import * as Call from "../services/Call";
 
-/* User Infos */
+/**
+ * Export User Infos from the API
+ */
 export async function utilsUserInfos(id) {
   return Call.getUserInfos(id).then((response) => {
     return {
@@ -15,7 +17,9 @@ export async function utilsUserInfos(id) {
 }
 
 
-/* Activity */
+/**
+ * Export User Activity from the API
+ */
 export async function utilsActivity(id) {
   return Call.getActivity(id).then((response) => {
     return {
@@ -31,7 +35,9 @@ export async function utilsActivity(id) {
 }
 
 
-/* Average Sessions */
+/**
+ * Export User Average Sessions from the API
+ */
 export async function utilsAverageSessions(id) {
   return Call.getAverageSessions(id).then((response) => {
     return {
@@ -47,7 +53,9 @@ export async function utilsAverageSessions(id) {
 }
 
 
-/* User Performance */
+/**
+ * Export User Performance from the API
+ */
 export async function utilsUserPerformance(id) {
   return Call.getUserPerformance(id).then((response) => {
     /** Essayer [] pour array */

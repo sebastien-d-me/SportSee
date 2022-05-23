@@ -18,6 +18,7 @@
     position: unset;
 }
 
+/* Graphique */
 .Quotidien > div > .recharts-wrapper {
     width: 100%!important;
 }

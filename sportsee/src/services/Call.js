@@ -2,6 +2,9 @@ import axios from "axios";
 import { Navigate } from 'react-router';
 import * as Data from "../assets/mock/data";
 
+/**
+ * Get the position of the ID in the Mock
+ */
 function IDMock(id) {
   let positionID = 0;
   switch(Object.values(id)[0]) {
@@ -17,7 +20,9 @@ function IDMock(id) {
   return positionID;
 }
 
-/* Mock ( a mettre dans utils) */
+/**
+ * Export User Infos from the Mock
+ */
 export function mockUserInfos(id) {
   const positionArray = IDMock(id);
   return {
@@ -30,6 +35,9 @@ export function mockUserInfos(id) {
   }
 }
 
+/**
+ * Export User Average Sessions from the Mock
+ */
 export function mockUserAverageSessions(id) {
   const positionArray = IDMock(id);
   return {
@@ -43,6 +51,9 @@ export function mockUserAverageSessions(id) {
   }
 }
 
+/**
+ * Export User Activity from the Mock
+ */
 export function mockUserActivity(id) {
   const positionArray = IDMock(id);
   return {
@@ -56,6 +67,9 @@ export function mockUserActivity(id) {
   }
 }
 
+/**
+ * Export User Performance from the Mock
+ */
 export function mockUserPerformance(id) {
   const positionArray = IDMock(id)
   return {
@@ -77,7 +91,9 @@ const instance = axios.create({
   timeout: 1000
 });
 
-/* User Infos */
+/**
+ * Export User Infos from the API
+ */
 export const getUserInfos = async(id) => {
   try {
     const response = await instance.get(`/${id}`);
@@ -87,7 +103,9 @@ export const getUserInfos = async(id) => {
   }
 }
 
-/* Activity */
+/**
+ * Export User Activity from the API
+ */
 export const getActivity = async(id) => {
   try {
     const response = await instance.get(`/${id}/activity`);
@@ -97,7 +115,9 @@ export const getActivity = async(id) => {
   }
 }
 
-/* Average Sessions */
+/**
+ * Export User Average Sessions from the API
+ */
 export const getAverageSessions = async(id) => {
   try {
     const response = await instance.get(`/${id}/average-sessions`);
@@ -107,7 +127,9 @@ export const getAverageSessions = async(id) => {
   }
 }
 
-/* User Performance */
+/**
+ * Export User Performance from the API
+ */
 export const getUserPerformance = async(id) => {
   try {
     const response = await instance.get(`/${id}/performance`);

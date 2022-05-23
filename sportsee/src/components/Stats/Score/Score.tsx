@@ -2,13 +2,26 @@ import "./Score.css";
 import PropTypes, { InferProps } from "prop-types";
 import { RadialBarChart, RadialBar } from "recharts";
 
+
+/**
+ * Defines the types accepted in this component
+ * @type {{ score: any; }}
+ */
 const ScoreProp = {
   score: PropTypes.number
 }
 
+/**
+ * @typedef {ScorePropTypes}
+ */
 type ScorePropTypes = InferProps<typeof ScoreProp>;
 Score.propTypes = ScoreProp;
 
+/**
+ * Displays the score graph
+ * @param {ScorePropTypes} { score }
+ * @returns
+ */
 function Score({ score }: ScorePropTypes) {
   const data = [
     {
