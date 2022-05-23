@@ -9,13 +9,26 @@ import * as Call from "./Call";
  */
 export async function utilsUserInfos(id: any) {
   return Call.getUserInfos(id).then((response) => {
-    return {
-      firstName: response.userInfos.firstName,
-      score: response.todayScore*100 || response.score*100,
-      calorieCount: (response.keyData.calorieCount).toLocaleString('en-US'),
-      proteinCount: response.keyData.proteinCount,
-      carbohydrateCount: response.keyData.carbohydrateCount,
-      lipidCount: response.keyData.lipidCount
+    try {
+      return {
+        erreur: "",
+        firstName: response.userInfos.firstName,
+        score: response.todayScore*100 || response.score*100,
+        calorieCount: (response.keyData.calorieCount).toLocaleString('en-US'),
+        proteinCount: response.keyData.proteinCount,
+        carbohydrateCount: response.keyData.carbohydrateCount,
+        lipidCount: response.keyData.lipidCount
+      }
+    } catch(test) {
+      return {
+        erreur: "erreur",
+        firstName: "",
+        score: 0,
+        calorieCount: 0,
+        proteinCount: 0,
+        carbohydrateCount: 0,
+        lipidCount: 0
+      }
     }
   });
 }

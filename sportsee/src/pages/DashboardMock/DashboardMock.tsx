@@ -9,6 +9,7 @@ import Toile from "../../components/Stats/Toile/Toile";
 import Score from "../../components/Stats/Score/Score";
 import Apport from "../../components/Apport/Apport";
 import * as Call from "../../services/Call";
+import { Navigate } from "react-router-dom";
 
 /**
  * Display the dashboard
@@ -17,6 +18,7 @@ import * as Call from "../../services/Call";
 function DashboardMock() {
   /* Get ID */
   const { id } = useParams();
+  const [erreur, setErreur] = useState(false);
 
   /**
    * User Infos : Interfaces - State
@@ -24,6 +26,7 @@ function DashboardMock() {
    * @typedef {interfaceUserInfos}
    */
   interface interfaceUserInfos {
+    erreur: string,
     firstName: string,
     score: number,
     calorieCount: string,
@@ -80,6 +83,12 @@ function DashboardMock() {
 useEffect(() => {
     /* User Infos */
     setUserInfos(Call.mockUserInfos({id}))
+    console.log(id)
+    if(id === "12" || id === "18") {
+      setErreur(false);
+    } else {
+      setErreur(true);
+    }
     
     /* User Activity */
     setActivity(Call.mockUserActivity({id}))
@@ -90,6 +99,8 @@ useEffect(() => {
     /* User Performance */
     setUserPerformance(Call.mockUserPerformance({id}))
   }, [id]);
+
+  if(erreur === true) return <Navigate to="/404" /> 
   
   return (
     <div className="container">

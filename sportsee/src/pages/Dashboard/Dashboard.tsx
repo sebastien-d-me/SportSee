@@ -8,6 +8,7 @@ import Moyenne from "../../components/Stats/Moyenne/Moyenne";
 import Toile from "../../components/Stats/Toile/Toile";
 import Score from "../../components/Stats/Score/Score";
 import Apport from "../../components/Apport/Apport";
+import { Navigate } from "react-router-dom";
 
 /**
  * Display the dashboard
@@ -16,6 +17,7 @@ import Apport from "../../components/Apport/Apport";
 function Dashboard() {
   /* Get ID */
   const { id } = useParams();
+  const [erreur, setErreur] = useState(false);
   type id = string | undefined;
 
   /**
@@ -24,6 +26,7 @@ function Dashboard() {
    * @typedef {interfaceUserInfos}
    */
   interface interfaceUserInfos {
+    erreur: string,
     firstName: string,
     score: number,
     calorieCount: string,
@@ -85,6 +88,9 @@ function Dashboard() {
     /* User Infos */
     Utils.utilsUserInfos(id).then((response) => {
       setUserInfos(response);   
+      if(response.erreur == "erreur") {
+        setErreur(true);
+      }
     });
 
     /* Activity */
@@ -103,7 +109,10 @@ function Dashboard() {
     });
   }, [id]);
 
+  if(erreur === true) return <Navigate to="/404" />  
+
   return (
+    console.log(userInfos),
     <div className="container">
       <Prenom prenom={userInfos?.firstName} />
       <span className="description">Félicitation ! Vous avez explosé vos objectifs hier 👏</span>

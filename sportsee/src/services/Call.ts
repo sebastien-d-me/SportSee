@@ -31,6 +31,7 @@ function IDMock(id: any) {
  */
 export function mockUserInfos(id: any) {
   const positionArray = IDMock(id);
+  try {
   return {
     calorieCount: (Data.USER_MAIN_DATA[positionArray].keyData.calorieCount).toLocaleString('en-US'),
     proteinCount: Data.USER_MAIN_DATA[positionArray].keyData.proteinCount,
@@ -39,6 +40,16 @@ export function mockUserInfos(id: any) {
     score: Data.USER_MAIN_DATA[positionArray].todayScore || Data.USER_MAIN_DATA[positionArray].score,
     firstName: Data.USER_MAIN_DATA[positionArray].userInfos.firstName
   }
+} catch(test) {
+  return {
+      calorieCount: (Data.USER_MAIN_DATA[positionArray].keyData.calorieCount).toLocaleString('en-US'),
+      proteinCount: Data.USER_MAIN_DATA[positionArray].keyData.proteinCount,
+      carbohydrateCount: Data.USER_MAIN_DATA[positionArray].keyData.carbohydrateCount,
+      lipidCount: Data.USER_MAIN_DATA[positionArray].keyData.lipidCount,
+      score: Data.USER_MAIN_DATA[positionArray].todayScore || Data.USER_MAIN_DATA[positionArray].score,
+      firstName: Data.USER_MAIN_DATA[positionArray].userInfos.firstName
+  }
+}
 }
 
 
