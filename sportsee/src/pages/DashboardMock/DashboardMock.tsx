@@ -101,7 +101,7 @@ useEffect(() => {
           <div className="col-stats">
             <Moyenne lundi={averageSessions?.lundi} mardi={averageSessions?.mardi} mercredi={averageSessions?.mercredi} jeudi={averageSessions?.jeudi} vendredi={averageSessions?.vendredi} samedi={averageSessions?.samedi} dimanche={averageSessions?.dimanche} />
             <Toile cardio={userPerformance?.cardio} energy={userPerformance?.energy} endurance={userPerformance?.endurance} strength={userPerformance?.strength} speed={userPerformance?.speed} intensity={userPerformance?.intensity} />
-            <Score score={userInfos?.score} />
+            <Score score={userInfos?.score*100} />
           </div>
         </div>
         <div className="liste-apports">

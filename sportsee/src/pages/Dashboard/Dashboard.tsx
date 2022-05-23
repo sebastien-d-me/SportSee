@@ -16,6 +16,7 @@ import Apport from "../../components/Apport/Apport";
 function Dashboard() {
   /* Get ID */
   const { id } = useParams();
+  type id = string | undefined;
 
   /**
    * User Infos : Interfaces - State

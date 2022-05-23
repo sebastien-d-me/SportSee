@@ -1,9 +1,13 @@
-import * as Call from "../services/Call";
+import * as Call from "./Call";
 
 /**
  * Export User Infos from the API
+ * @export
+ * @async
+ * @param {*} id
+ * @returns {unknown}
  */
-export async function utilsUserInfos(id) {
+export async function utilsUserInfos(id: any) {
   return Call.getUserInfos(id).then((response) => {
     return {
       firstName: response.userInfos.firstName,
@@ -19,8 +23,12 @@ export async function utilsUserInfos(id) {
 
 /**
  * Export User Activity from the API
+ * @export
+ * @async
+ * @param {*} id
+ * @returns {unknown}
  */
-export async function utilsActivity(id) {
+export async function utilsActivity(id: any) {
   return Call.getActivity(id).then((response) => {
     return {
       jour1: response.sessions[0],
@@ -37,8 +45,12 @@ export async function utilsActivity(id) {
 
 /**
  * Export User Average Sessions from the API
+ * @export
+ * @async
+ * @param {*} id
+ * @returns {unknown}
  */
-export async function utilsAverageSessions(id) {
+export async function utilsAverageSessions(id: any) {
   return Call.getAverageSessions(id).then((response) => {
     return {
       lundi: response.sessions[0].sessionLength,
@@ -55,8 +67,12 @@ export async function utilsAverageSessions(id) {
 
 /**
  * Export User Performance from the API
+ * @export
+ * @async
+ * @param {*} id
+ * @returns {unknown}
  */
-export async function utilsUserPerformance(id) {
+export async function utilsUserPerformance(id: any) {
   return Call.getUserPerformance(id).then((response) => {
     /** Essayer [] pour array */
     return {
