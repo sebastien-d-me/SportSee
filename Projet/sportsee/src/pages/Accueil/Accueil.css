@@ -1,5 +1,8 @@
 .lien-accueil {
+    display: block;
+    margin: auto;
     text-decoration: none;
+    width: fit-content;
 }
 
 .btn-accueil {

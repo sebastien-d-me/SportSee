@@ -1,7 +1,7 @@
 ### Step 1 : Installing the prerequisites
-* Git : [Link](https://git-scm.com/ "Link")
-* NodeJS : [Link](https://nodejs.org/en/download/ "Link")
-* Yarn : [Link](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable "Link")
+* Git v2.35.1.windows.2 : [Link](https://git-scm.com/ "Link")
+* NodeJS v16.13.1: [Link](https://nodejs.org/en/download/ "Link")
+* Yarn v1.22.17 : [Link](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable "Link")
 
 ------------
 
@@ -20,5 +20,6 @@
 
 ### Step 4 : Project start-up
 Tools used :
-- Axios : [Link](https://axios-http.com/ "Link")
-- Recharts : [Link](https://recharts.org/en-US/ "Link")
+- Axios v0.27.2: [Link](https://axios-http.com/ "Link")
+- Recharts v2.1.9: [Link](https://recharts.org/en-US/ "Link")
+- VSCode v1.67.2: [Link](https://code.visualstudio.com/ "Link")

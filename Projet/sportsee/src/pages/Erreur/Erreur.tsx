@@ -1,20 +1,20 @@
-import "./Erreur404.css";
+import "./Erreur.css";
 import { NavLink } from "react-router-dom";
 
 
 /**
- * Display the 404 error page
+ * Display the error page
  * @returns {*}
  */
-function Erreur404() {
+function Erreur() {
   return (
     <div className="container">
+      <span className="erreur-titre">Une erreur est survenue</span>
       <NavLink className="lien-accueil" to={"/"}>
-        <span>Le profil n'existe pas ou plus</span>
         <button className="btn-accueil">Aller à l'accueil</button>
       </NavLink>
     </div>
   );
 }
 
-export default Erreur404;
+export default Erreur;

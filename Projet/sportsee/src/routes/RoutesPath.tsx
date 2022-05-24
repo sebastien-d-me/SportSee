@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout";
 import Accueil from "../pages/Accueil/Accueil";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import DashboardMock from "../pages/DashboardMock/DashboardMock";
-import Erreur404 from "../pages/Erreur404/Erreur404";
+import Erreur from "../pages/Erreur/Erreur";
 
 function RoutesPath() {
   return(
@@ -13,7 +13,7 @@ function RoutesPath() {
           <Route path="/" element={<Accueil />} />
           <Route path="/dashboard/:id" element={<Dashboard />} />
           <Route path="/dashboard-mock/:id" element={<DashboardMock />} />
-          <Route path="*" element={<Erreur404 />} />
+          <Route path="*" element={<Erreur />} />
         </Routes>
       </Layout>
     </BrowserRouter>
