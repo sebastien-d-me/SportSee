@@ -16,6 +16,7 @@ const PrenomProp = {
 type PrenomPropTypes = InferProps<typeof PrenomProp>;
 Prenom.propTypes = PrenomProp;
 
+
 /**
  * Displays the user's first name
  * @param {PrenomPropTypes} { prenom }

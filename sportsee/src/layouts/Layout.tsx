@@ -8,15 +8,15 @@ import Aside from "./Aside/Aside";
  * Defines the types accepted in this component
  * @type {{ children: any; }}
  */
-const LayoutPropTypes = {
+const LayoutProp = {
   children: PropTypes.any.isRequired
 }
 
 /**
  * @typedef {LayoutPropTypes}
  */
-type LayoutPropTypes = InferProps<typeof LayoutPropTypes>;
-Layout.propTypes = LayoutPropTypes;
+type LayoutPropTypes = InferProps<typeof LayoutProp>;
+Layout.propTypes = LayoutProp;
 
 /**
  * Display the layout

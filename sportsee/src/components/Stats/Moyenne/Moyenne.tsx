@@ -23,6 +23,7 @@ const MoyenneProp = {
 type MoyennePropTypes = InferProps<typeof MoyenneProp>;
 Moyenne.propTypes = MoyenneProp;
 
+
 /**
  * Create a custom tooltip on hover
  * @param {TooltipProps<number, string>} {active, payload}
@@ -38,6 +39,7 @@ const CustomTooltip = ({active, payload}: TooltipProps<number, string>) => {
   }
   return null;
 };
+
 
 /**
  * Displays the average session duration graph
@@ -83,7 +85,7 @@ function Moyenne({ lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche }: 
         <LineChart data={data} height={290} width={290}>
           <XAxis axisLine={false} dataKey="name" tickLine={false} />
           <YAxis hide={true} />
-          <Tooltip content={<CustomTooltip />} cursor={{stroke: 'rgba(0, 0, 0, 0.25)', strokeWidth: 50}} />
+          <Tooltip content={<CustomTooltip />} cursor={{stroke: "rgba(0, 0, 0, 0.25)", strokeWidth: 50}} />
           <Line dataKey="value" dot={false} stroke="#ffffff" type="monotone" />
         </LineChart>
       </div>

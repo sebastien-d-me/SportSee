@@ -6,15 +6,16 @@ import PropTypes, { InferProps } from "prop-types";
  * Defines the types accepted in this component
  * @type {{ image: any; }}
  */
-const ActivitePropTypes = {
+const ActiviteProp = {
   image: PropTypes.string.isRequired
 }
 
 /**
  * @typedef {ActivitePropTypes}
  */
-type ActivitePropTypes = InferProps<typeof ActivitePropTypes>;
-Activite.propTypes = ActivitePropTypes;
+type ActivitePropTypes = InferProps<typeof ActiviteProp>;
+Activite.propTypes = ActiviteProp;
+
 
 /**
  * Display the activity image in the sidebar
@@ -24,7 +25,7 @@ Activite.propTypes = ActivitePropTypes;
 function Activite({ image }: ActivitePropTypes) {
   return (
     <div className="activite">
-      <img src={image} alt="activite" />
+      <img alt="activite" src={image} />
     </div>
   )
 }

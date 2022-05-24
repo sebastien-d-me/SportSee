@@ -1,5 +1,6 @@
 import * as Call from "./Call";
 
+
 /**
  * Export User Infos from the API
  * @export
@@ -19,7 +20,7 @@ export async function utilsUserInfos(id: any) {
         carbohydrateCount: response.keyData.carbohydrateCount,
         lipidCount: response.keyData.lipidCount
       }
-    } catch(test) {
+    } catch(err) {
       return {
         erreur: "erreur",
         firstName: "",
@@ -43,14 +44,26 @@ export async function utilsUserInfos(id: any) {
  */
 export async function utilsActivity(id: any) {
   return Call.getActivity(id).then((response) => {
-    return {
-      jour1: response.sessions[0],
-      jour2: response.sessions[1],
-      jour3: response.sessions[2],
-      jour4: response.sessions[3],
-      jour5: response.sessions[4],
-      jour6: response.sessions[5],
-      jour7: response.sessions[6]
+    try {
+      return {
+        jour1: response.sessions[0],
+        jour2: response.sessions[1],
+        jour3: response.sessions[2],
+        jour4: response.sessions[3],
+        jour5: response.sessions[4],
+        jour6: response.sessions[5],
+        jour7: response.sessions[6]
+      }
+    } catch(err) {
+      return {
+        jour1: 0,
+        jour2: 0,
+        jour3: 0,
+        jour4: 0,
+        jour5: 0,
+        jour6: 0,
+        jour7: 0
+      }
     }
   });
 }
@@ -65,14 +78,26 @@ export async function utilsActivity(id: any) {
  */
 export async function utilsAverageSessions(id: any) {
   return Call.getAverageSessions(id).then((response) => {
-    return {
-      lundi: response.sessions[0].sessionLength,
-      mardi: response.sessions[1].sessionLength,
-      mercredi: response.sessions[2].sessionLength,
-      jeudi: response.sessions[3].sessionLength,
-      vendredi: response.sessions[4].sessionLength,
-      samedi: response.sessions[5].sessionLength,
-      dimanche: response.sessions[6].sessionLength,
+    try {
+      return {
+        lundi: response.sessions[0].sessionLength,
+        mardi: response.sessions[1].sessionLength,
+        mercredi: response.sessions[2].sessionLength,
+        jeudi: response.sessions[3].sessionLength,
+        vendredi: response.sessions[4].sessionLength,
+        samedi: response.sessions[5].sessionLength,
+        dimanche: response.sessions[6].sessionLength,
+      }
+    } catch(err) {
+      return {
+        lundi: 0,
+        mardi: 0,
+        mercredi: 0,
+        jeudi: 0,
+        vendredi: 0,
+        samedi: 0,
+        dimanche: 0,
+      }
     }
   });
 }
@@ -87,14 +112,24 @@ export async function utilsAverageSessions(id: any) {
  */
 export async function utilsUserPerformance(id: any) {
   return Call.getUserPerformance(id).then((response) => {
-    /** Essayer [] pour array */
-    return {
-      cardio: response.data[0].value,
-      energy: response.data[1].value,
-      endurance: response.data[2].value,
-      strength: response.data[3].value,
-      speed: response.data[4].value,
-      intensity: response.data[5].value
+    try {
+      return {
+        cardio: response.data[0].value,
+        energy: response.data[1].value,
+        endurance: response.data[2].value,
+        strength: response.data[3].value,
+        speed: response.data[4].value,
+        intensity: response.data[5].value
+      }
+    } catch(err) {
+      return {
+        cardio: 0,
+        energy: 0,
+        endurance: 0,
+        strength: 0,
+        speed: 0,
+        intensity: 0
+      }
     }
   });
 }

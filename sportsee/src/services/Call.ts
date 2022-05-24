@@ -32,24 +32,24 @@ function IDMock(id: any) {
 export function mockUserInfos(id: any) {
   const positionArray = IDMock(id);
   try {
-  return {
-    calorieCount: (Data.USER_MAIN_DATA[positionArray].keyData.calorieCount).toLocaleString('en-US'),
-    proteinCount: Data.USER_MAIN_DATA[positionArray].keyData.proteinCount,
-    carbohydrateCount: Data.USER_MAIN_DATA[positionArray].keyData.carbohydrateCount,
-    lipidCount: Data.USER_MAIN_DATA[positionArray].keyData.lipidCount,
-    score: Data.USER_MAIN_DATA[positionArray].todayScore || Data.USER_MAIN_DATA[positionArray].score,
-    firstName: Data.USER_MAIN_DATA[positionArray].userInfos.firstName
-  }
-} catch(test) {
-  return {
+    return {
       calorieCount: (Data.USER_MAIN_DATA[positionArray].keyData.calorieCount).toLocaleString('en-US'),
       proteinCount: Data.USER_MAIN_DATA[positionArray].keyData.proteinCount,
       carbohydrateCount: Data.USER_MAIN_DATA[positionArray].keyData.carbohydrateCount,
       lipidCount: Data.USER_MAIN_DATA[positionArray].keyData.lipidCount,
       score: Data.USER_MAIN_DATA[positionArray].todayScore || Data.USER_MAIN_DATA[positionArray].score,
       firstName: Data.USER_MAIN_DATA[positionArray].userInfos.firstName
+    }
+  } catch(err) {
+    return {
+        calorieCount: 0,
+        proteinCount: 0,
+        carbohydrateCount: 0,
+        lipidCount: 0,
+        score: 0,
+        firstName: ""
+    }
   }
-}
 }
 
 
@@ -135,6 +135,7 @@ export const getUserInfos = async(id: any) => {
     const response = await instance.get(`/${id}`);
     return response.data.data;
   } catch (error) {
+    console.clear()
     return error;
   }
 }
@@ -151,6 +152,7 @@ export const getActivity = async(id: any) => {
     const response = await instance.get(`/${id}/activity`);
     return response.data.data;
   } catch (error) {
+    console.clear()
     return error;
   }
 }
@@ -167,6 +169,7 @@ export const getAverageSessions = async(id: any) => {
     const response = await instance.get(`/${id}/average-sessions`);
     return response.data.data;
   } catch (error) {
+    console.clear()
     return error;
   }
 }
@@ -183,6 +186,7 @@ export const getUserPerformance = async(id: any) => {
     const response = await instance.get(`/${id}/performance`);
     return response.data.data;
   } catch (error) {
+    console.clear()
     return error;
   }
 }

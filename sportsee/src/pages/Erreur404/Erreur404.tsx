@@ -1,6 +1,7 @@
 import "./Erreur404.css";
 import { NavLink } from "react-router-dom";
 
+
 /**
  * Display the 404 error page
  * @returns {*}
@@ -8,7 +9,7 @@ import { NavLink } from "react-router-dom";
 function Erreur404() {
   return (
     <div className="container">
-      <NavLink to={"/"} className="lien-accueil">
+      <NavLink className="lien-accueil" to={"/"}>
         <span>Le profil n'existe pas ou plus</span>
         <button className="btn-accueil">Aller à l'accueil</button>
       </NavLink>

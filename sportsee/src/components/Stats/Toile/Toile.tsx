@@ -25,10 +25,10 @@ Toile.propTypes = ToileProp;
 
 /**
  * Create a interface for the data
- * @interface dataProps
- * @typedef {dataProps}
+ * @interface toileProps
+ * @typedef {toileProps}
  */
-interface dataProps {
+interface toileProps {
   type: string,
   value: number | undefined | null,
   fullMark: number
@@ -41,7 +41,7 @@ interface dataProps {
  * @returns
  */
 function Toile({ cardio, energy, endurance, strength, speed, intensity }: ToilePropTypes) {
-  const [data, setData] = useState<dataProps[]>([]);
+  const [data, setData] = useState<toileProps[]>([]);
   
   useEffect(() => {
     if(intensity && speed && strength && endurance && energy && cardio) {
@@ -82,11 +82,11 @@ function Toile({ cardio, energy, endurance, strength, speed, intensity }: ToileP
   
   return (
     <div className="Toile">
-      { data.length > 0 && 
+      {data.length > 0 && 
         <RadarChart data={data} height={290} outerRadius={90} width={290}>
           <PolarGrid />
           <PolarAngleAxis dataKey="type" />
-          <Radar name="18" dataKey="value" fill="#FF0101B2" fillOpacity={0.7} />
+          <Radar dataKey="value" fill="#FF0101B2" fillOpacity={0.7} name="18" />
         </RadarChart>
       }
     </div>

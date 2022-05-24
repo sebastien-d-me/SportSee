@@ -1,7 +1,7 @@
 import "./DashboardMock.css";
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import * as Utils from "../../services/Utils";
+/*import * as Utils from "../../services/Utils";*/
 import Prenom from "../../components/Prenom/Prenom";
 import Quotidien from "../../components/Stats/Quotidien/Quotidien";
 import Moyenne from "../../components/Stats/Moyenne/Moyenne";
@@ -83,7 +83,6 @@ function DashboardMock() {
 useEffect(() => {
     /* User Infos */
     setUserInfos(Call.mockUserInfos({id}))
-    console.log(id)
     if(id === "12" || id === "18") {
       setErreur(false);
     } else {

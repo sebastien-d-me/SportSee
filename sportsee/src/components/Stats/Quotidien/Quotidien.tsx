@@ -19,6 +19,7 @@ const QuotidienProp = {
 
 Quotidien.propTypes = QuotidienProp;
 
+
 /**
  * Create a custom tooltip on hover
  * @param {TooltipProps<number, string>} {active,payload}
@@ -35,6 +36,7 @@ const CustomTooltip = ({active,payload}: TooltipProps<number, string>) => {
   }
   return null;
 };
+
 
 /**
  * Displays the daily activity graph

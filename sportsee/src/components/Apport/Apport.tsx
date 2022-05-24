@@ -23,12 +23,13 @@ const ApportProp = {
 type ApportPropTypes = InferProps<typeof ApportProp>;
 Apport.propTypes = ApportProp;
 
+
 /**
  * Displays the different inputs with their image and value
- * @param {ApportPropTypes} { photo, quantiteStr, quantite, type }
+ * @param {ApportPropTypes} { photo, quantite, quantiteStr, type }
  * @returns
  */
-function Apport({ photo, quantiteStr, quantite, type }: ApportPropTypes) {
+function Apport({ photo, quantite, quantiteStr, type }: ApportPropTypes) {
   /**
    * Adds according to the type the corresponding photo and its unit
    */
@@ -58,7 +59,7 @@ function Apport({ photo, quantiteStr, quantite, type }: ApportPropTypes) {
   return (
     <div className="apport">
       <div className={`photo-fond fond-${photo}`}>
-        <img className="photo-type" src={srcImg} alt="apport" />
+        <img alt="apport" className="photo-type" src={srcImg} />
       </div>
       <div className="apport-infos">
         <span className="quantite">{quantite || quantiteStr }{unite}</span>

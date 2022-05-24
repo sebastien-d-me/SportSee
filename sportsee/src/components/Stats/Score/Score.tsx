@@ -17,6 +17,7 @@ const ScoreProp = {
 type ScorePropTypes = InferProps<typeof ScoreProp>;
 Score.propTypes = ScoreProp;
 
+
 /**
  * Displays the score graph
  * @param {ScorePropTypes} { score }
@@ -38,7 +39,7 @@ function Score({ score }: ScorePropTypes) {
     <div className="Score">
       <span className="type-stats">Score</span>
       <div className="score-graphique">
-        <RadialBarChart barSize={15} data={data} height={250} innerRadius="100%" startAngle={90} endAngle={450} width={250}>
+        <RadialBarChart barSize={15} data={data} endAngle={450} height={250} innerRadius="100%" startAngle={90} width={250}>
           <RadialBar dataKey="value" />
         </RadialBarChart>
         <div className="pourcentage">

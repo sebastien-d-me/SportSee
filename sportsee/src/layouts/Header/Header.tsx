@@ -2,6 +2,7 @@ import "./Header.css";
 import logo from "../../assets/img/Logo.png";
 import { NavLink } from "react-router-dom";
 
+
 /**
  * Display the header
  * @returns {*}
@@ -9,7 +10,7 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <header>
-      <img className="logo" src={logo} alt="logo" />
+      <img alt="logo" className="logo" src={logo} />
       <nav>
         <NavLink to="/">Accueil</NavLink>
         <NavLink to="/">Profil</NavLink>
