@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "../layouts/Layout";
 import Accueil from "../pages/Accueil/Accueil";
 import Dashboard from "../pages/Dashboard/Dashboard";
@@ -7,16 +7,17 @@ import Erreur from "../pages/Erreur/Erreur";
 
 function RoutesPath() {
   return(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<Accueil />} />
+          <Route element={<Navigate replace to="/accueil" />} path="/" />
+          <Route path="/accueil" element={<Accueil />} />
           <Route path="/dashboard/:id" element={<Dashboard />} />
           <Route path="/dashboard-mock/:id" element={<DashboardMock />} />
           <Route path="*" element={<Erreur />} />
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

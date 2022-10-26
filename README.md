@@ -21,4 +21,4 @@ Ce projet est le n°12 du parcours [**Développeur Front-End**](https://openclas
 
 ### Informations complémentaires
 - Soutenance validé le 31/05/2022.
-- Lien vers le site : [Cliquez-ici](https://sebastien-d-me.github.io/SebastienDelahaye_12_19042022/ "Cliquez-ici").
+- Lien vers le site : [Cliquez-ici](https://sebastien-d-me.github.io/SportSee/ "Cliquez-ici").

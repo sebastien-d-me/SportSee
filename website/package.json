@@ -1,7 +1,7 @@
 {
   "name": "sportsee",
-  "version": "0.1.0",
-  "homepage": "https://sebastien-d-me.github.io/SebastienDelahaye_12_19042022/",
+  "version": "1.0.0",
+  "homepage": "https://sebastien-d-me.github.io/SportSee/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@types/prop-types": "^15.7.5",
     "gh-pages": "^3.2.3",
     "jsdoc": "^3.6.10"
   }
