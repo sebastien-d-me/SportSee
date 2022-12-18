@@ -1,4 +1,4 @@
-<meta property="og:image" content="https://raw.githubusercontent.com/sebastien-d-me/SportSee/main/website/public/logo192.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sebastien-d-me/SportSee/main/website/src/assets/img/Logo.png">
 
 # Formation Développeur Front-End
 ## Projet 12 - SportSee
